@@ -1,6 +1,7 @@
 import React from "react";
-
-function VideoPlayer({ trailerUrl }) {
+import YouTube from "react-youtube";
+function VideoPlayer({ trailer }) {
+  console.log("url", trailer);
   const opts = {
     height: "390",
     width: "100%",
@@ -9,7 +10,9 @@ function VideoPlayer({ trailerUrl }) {
     },
   };
   return (
-    <div>{trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}</div>
+    <div>
+      <YouTube videoId={trailer} opts={opts} />
+    </div>
   );
 }
 
